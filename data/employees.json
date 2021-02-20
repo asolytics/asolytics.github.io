@@ -1,0 +1,14 @@
+{
+  "salesManager": {
+    "name": "Роман",
+    "avatar": "https://static.dw.com/image/17083711_303.jpg",
+    "position":"Sales manager",
+    "tlg": "@roma"
+  },
+  "supporManager": {
+    "name": "Roman",
+    "avatar": "https://static.dw.com/image/17083711_303.jpg",
+    "position":"Suppor manager",
+    "tlg": "@roma"
+  }
+}
