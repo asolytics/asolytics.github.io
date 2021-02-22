@@ -1,3 +1,5 @@
 {
-  "free": true
+  "free": true,
+  "price": 30,
+  "currency": "USD"
 }
