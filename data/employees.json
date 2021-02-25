@@ -1,14 +1,14 @@
 {
   "salesManager": {
     "name": "Роман",
-    "avatar": "https://static.dw.com/image/17083711_303.jpg",
-    "position":"Sales manager",
-    "tlg": "@roma"
+    "avatar": "https://scontent.flwo2-1.fna.fbcdn.net/v/t1.0-1/p160x160/64659756_1590447624421885_6706632887728340992_n.jpg?_nc_cat=100&ccb=3&_nc_sid=dbb9e7&_nc_ohc=kzxyi7xtYrwAX8ADy2p&_nc_ht=scontent.flwo2-1.fna&tp=6&oh=5d8f1baeb0d15d9109339d96d41cd63f&oe=605BACC2",
+    "position":"Аккаунт менеджер",
+    "tlg": "https://t.me/kotlindev"
   },
   "supportManager": {
-    "name": "Roman",
-    "avatar": "https://static.dw.com/image/17083711_303.jpg",
-    "position":"Suppor manager",
-    "tlg": "https://t.me/kotlin"
+    "name": "Роман",
+    "avatar": "https://scontent.flwo2-1.fna.fbcdn.net/v/t1.0-1/p160x160/64659756_1590447624421885_6706632887728340992_n.jpg?_nc_cat=100&ccb=3&_nc_sid=dbb9e7&_nc_ohc=kzxyi7xtYrwAX8ADy2p&_nc_ht=scontent.flwo2-1.fna&tp=6&oh=5d8f1baeb0d15d9109339d96d41cd63f&oe=605BACC2",
+    "position":"Менеджер поддержки",
+    "tlg": "https://t.me/kotlindev"
   }
 }
