@@ -1,7 +1,7 @@
 {
-  "linkLoader": "https://github.com/asolytics/asolytics.github.io/releases/download/asolytics_1.2/asolytics-release_26_02_2021_.apk",
+  "linkLoader": "https://github.com/asolytics/asolytics.github.io/releases/download/asolytics/asolytics-release_26_02_2021_3.apk",
   "file": "asolytics.apk",
-  "tlg": "https://t.me/asolytics/9",
-  "versionName": "1.2",
-  "description": "📌 Исправили баг в французской локали, символ блокировал пирсинг и приводил приложение к аварии. <br>📌 Исправили ошибку в алгоритме расчета частотности ключей"
+  "tlg": "https://t.me/asolytics/10",
+  "versionName": "1.3",
+  "description": "📌 Исправили краш, когда исследуемое приложение не имеет оценок. <br>📌 На туториале не помещался текст, исправлено."
 }
