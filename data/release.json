@@ -1,7 +1,7 @@
 {
-  "linkLoader": "https://github.com/asolytics/asolytics.github.io/releases/download/asolytics_1.8/asolytics-release_04_03_2021_2.apk",
+  "linkLoader": "https://github.com/asolytics/asolytics.github.io/releases/download/asolytics_1.9/asolytics-release_06_03_2021.apk",
   "file": "asolytics.apk",
-  "tlg": "https://t.me/asolytics/15",
-  "versionName": "1.8",
-  "description": "📌 Небольшие изменения на экране добавления приложений, теперь фокус поиска и клавиатура запускается автоматически. У некоторых пользователей возникали проблемы при добавлении первого приложения"
+  "tlg": "https://t.me/asolytics",
+  "versionName": "1.9",
+  "description": "📌 Добавили кнопку для ручного обновления набора данных (установки, оценки, локаль, aso индекс)"
 }
