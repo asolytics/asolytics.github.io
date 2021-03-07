@@ -1,7 +1,7 @@
 {
-  "linkLoader": "https://github.com/asolytics/asolytics.github.io/releases/download/asolytics_1.9/asolytics-release_06_03_2021.apk",
+  "linkLoader": "https://github.com/asolytics/asolytics.github.io/releases/download/asolytics_2.0/asolytica-release_07_03_2021.apk",
   "file": "asolytics.apk",
   "tlg": "https://t.me/asolytics",
-  "versionName": "1.9",
-  "description": "📌 Добавили кнопку для ручного обновления набора данных (установки, оценки, локаль, aso индекс)"
+  "versionName": "2.0",
+  "description": "📌 Улучшили стабильность Asolytics. Если в момент прасинга данных или при поиске приложений возникал обрыв интернет соединения, приложение завершалось с ошибкой. Исправили это и несколько других крашей."
 }
