@@ -1,7 +1,7 @@
 {
-  "linkLoader": "https://github.com/asolytics/asolytics.github.io/releases/download/asolytics_2.5/asolytics-release_19_03_2021.apk",
+  "linkLoader": "https://github.com/asolytics/asolytics.github.io/releases/download/asolytics_2.6/asolytics-release_23_03_2021.apk",
   "file": "asolytics.apk",
   "tlg": "https://t.me/asolytics",
-  "versionName": "2.5",
-  "description": "📌 Исправили проблему  загрузки данных в Швейцарской локали. Теперь можно собирать ключи в Швейцарии и работать с другими данными."
+  "versionName": "2.6",
+  "description": "📌 Добавлена  возможность экспортировать набора данных в вайл Excel, функция экспорта в csv фал устарела, мы ее убрали."
 }
