@@ -1,7 +1,7 @@
 {
-  "linkLoader": "https://github.com/asolytics/asolytics.github.io/releases/download/asolytics_2.6/asolytics-release_23_03_2021.apk",
+  "linkLoader": "https://github.com/asolytics/asolytics.github.io/releases/download/asolytics_2.7/asolytics-release_31_03_2021.apk",
   "file": "asolytics.apk",
   "tlg": "https://t.me/asolytics",
-  "versionName": "2.6",
-  "description": "📌 Добавлена  возможность экспортировать набора данных в файл Excel, функция экспорта в csv фал устарела, мы ее убрали."
+  "versionName": "2.7",
+  "description": "📌 Многие пользователи прислали о проблеме, когда приложение вылетает при открытии статистики ключа, мы наконец исправили эту проблему! <br> 📌 Исправили синтаксические ошибки."
 }
