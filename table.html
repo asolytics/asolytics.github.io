@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблиця ключових слів</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/1.0.11/pako.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Підключення шрифту Roboto -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* Застосування шрифту Roboto */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            position: relative; /* Для позиціонування степеня */
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+        .sup {
+            font-size: 0.7em; /* Зменшений шрифт для степеня */
+            vertical-align: super; /* Вирівнювання по верхньому краю */
+            margin-left: 5px; /* Відступ між цифрами */
+        }
+        .red {
+            color: red;
+        }
+        .green {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <table id="keywordsTable">
+    <thead>
+        <tr>
+            <th onclick="sortTable(0)">Keywords</th>
+            <th onclick="sortTable(1)">Popularity</th>
+            <th onclick="sortTable(2)">Position</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Дані таблиці будуть додані тут -->
+    </tbody>
+</table>
+
+<script>
+    // Приклад JSON даних
+    var jsonData = [];
+
+    let sortOrder = [true, true, true];
+
+    const url = new URL(window.location.href);
+
+    const paramValue = url.searchParams.get('data');
+
+
+    if(paramValue != null) {
+        try {
+
+            const zipJsonBytes = Uint8Array.from(atob(paramValue.replace(/_/g, '/').replace(/-/g, '+')), c => c.charCodeAt(0));
+
+            // Розпаковуємо Gzip
+            const decompressed = pako.inflate(zipJsonBytes, { to: 'string' });
+
+            // Виводимо результат
+            //console.log(decompressed);
+            jsonData = JSON.parse(decompressed)
+
+
+            console.log('OK');
+        }  catch (e) {
+            //console.log(e)
+        }
+    }
+
+    // Функція для заповнення таблиці даними
+    function populateTable(data) {
+        const tableBody = document.getElementById('keywordsTable').getElementsByTagName('tbody')[0];
+
+        data.forEach(item => {
+            const row = tableBody.insertRow();
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            const cell3 =  row.insertCell(2);
+
+            cell1.textContent = item.keywords;
+            cell2.textContent = item.popularity;
+
+            // Основне значення position
+            cell3.textContent = item.inx == -1? "40+": item.inx
+
+            var changeIndex = (item.prev == -1? 40 : item.prev) - (item.inx == -1? 40 : item.inx)
+            
+            // Створення елемента для степеня
+            const sup = document.createElement('span');
+            sup.className = 'sup';
+            if(changeIndex == 0) {
+                sup.textContent = ""
+            } else if (changeIndex < 0) {
+                sup.textContent = changeIndex + " ➘" 
+            } else {
+                sup.textContent =  changeIndex + " ➚"
+            }
+
+            // Визначення кольору для степеня
+            
+            if (changeIndex < 0) {
+                sup.classList.add('red');
+            } else {
+                sup.classList.add('green');
+            }
+
+            // Додавання степеня до комірки
+            cell3.appendChild(sup);
+        });
+    }
+
+    // Функція для сортування таблиці
+    function sortTable(columnIndex) {
+        const table = document.getElementById('keywordsTable');
+        const tbody = table.getElementsByTagName('tbody')[0];
+        const rows = Array.from(tbody.rows);
+        const isNumericColumn = columnIndex === 1 || columnIndex === 2; // Перевірка, чи стовпець числовий
+
+        // Зміна порядку сортування
+        sortOrder[columnIndex] = !sortOrder[columnIndex];
+
+        rows.sort((a, b) => {
+            const cellA = a.cells[columnIndex].innerHTML.trim().replace("+", "");
+            const cellB = b.cells[columnIndex].innerHTML.trim().replace("+", "");
+
+            if (isNumericColumn) {
+                return sortOrder[columnIndex] ? parseInt(cellA) - parseInt(cellB) : parseInt(cellB) - parseInt(cellA);
+            } else {
+                return sortOrder[columnIndex] ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+            }
+        });
+
+        // Очищення таблиці та додавання відсортованих рядків
+        tbody.innerHTML = '';
+        rows.forEach(row => tbody.appendChild(row));
+    }
+
+    // Виклик функції для заповнення таблиці
+    populateTable(jsonData);
+</script>
+
+</body>
+</html>
